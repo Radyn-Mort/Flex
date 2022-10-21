@@ -24,8 +24,8 @@
         </div>
     </nav>
     <h2 class="push-top">Welcome, {{session.persona}}</h2>
-    <main class="flex">
-        <section class="margin-10 flex-3 shadow">
+    <main class="flex-main">
+        <section class="margin-10 flex-3 shadow max-h-1000">
             <div class="olive pad-5">
                 <h2>Rankings</h2>
             </div>
@@ -60,7 +60,7 @@
             <div class="coffee pad-5 solid">
                     <ul class="list ">
                     {% else %}
-                            <li >{{user.rank}} {{user.persona}} {{user.park}} <a href="/view/{{user.id}}">View</a></li>
+                            <li class="flex space-between"><p>{{user.rank}}</p><p>{{user.persona}} </p><p>{{user.park}}</p>  <a href="/view/{{user.id}}">View</a></li>
                     {% endif %}
                     {% endfor %}
                             
@@ -82,8 +82,14 @@
                 {% endfor %}
             </div>
             </div>
-
+            <div class="mocha weather margin-10 shadow">
+                <h3 class="olive">weather</h3>
+            <div id="weather" >
+            </div>
+            </div>
         </section>
+
     </main>
 </body>
+<script src="{{ url_for('static',filename='script/index.js') }}"></script>
 </html>

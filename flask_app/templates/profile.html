@@ -25,20 +25,17 @@
             <img src="../static/img/column.png" alt="profile pic" class="img-large">
             <p>Rank: {{user.rank}} <br> Park: {{user.park}} <br></p>
         </section>
-        <section class="margin-10 flex-2">
+        <!-- <section class="margin-10 flex-2">
             <div class="shadow">
-            <!-- card head -->
                 <h2 class="olive pad-5">New Challenge</h2>
-            <!-- card body -->
             <div class="mocha pad-5">
-                <!-- jinja here for challenges -->
                 <div >
                     <h3 class="coffee">New Challenges name vs name2 </h3>
                     <div class="olive-pale"><a href="#">Video link</a></div>
                 </div>
             </div>
             </div>
-        </section>
+        </section> -->
     </main>
     <section>
     <div class="mocha pad-5 solid margin-10 shadow">
@@ -46,7 +43,7 @@
         <div class="">
         <ul class="list ">
             {% for rank in ranks%}
-                <li >{{rank.rank}} {{rank.persona}} {{rank.park}} <form action="/challenge" method="POST"> <input type="hidden" value="{{rank.id}}" name="challenged_id"> <input type="submit" value="challenge"></form></li>
+                <li class="flex align-text space-between"><p class="margin-10">{{rank.rank}}</p> <p>{{rank.persona}} </p><p>{{rank.park}}</p> <form action="/challenge" method="POST"> <input type="hidden" value="{{rank.id}}" name="challenged_id"> <input type="submit" value="challenge" class="btn"></form></li>
             {% endfor %}
         </div>
     </div>

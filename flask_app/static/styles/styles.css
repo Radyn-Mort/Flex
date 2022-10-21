@@ -14,6 +14,10 @@ nav{
     background-color:  rgba(120, 133, 133, 1);
     
 }
+
+.weather>h4{
+    background-color: rgba(120, 133, 133, 1) ;
+}
 .push-top{
     margin-top: 85px;
     }
@@ -71,6 +75,10 @@ li:nth-of-type(2n) {
     display: flex;
 
 }
+.flex-main{
+    display: flex;
+    flex-direction: row;
+}
 .flex-col{
     display: flex;
     flex-direction: column;
@@ -78,10 +86,20 @@ li:nth-of-type(2n) {
 .align-text{
     align-items: center;
 }
+.space-between{
+    justify-content: space-between;
+}
+.space-around{
+    justify-content: space-around;
+}
 .flex-row{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+.max-h-1000{
+    max-height: 750px;
 }
 
 .flex-1{
@@ -208,4 +226,20 @@ li:nth-of-type(2n) {
     color:transparent;
     -webkit-background-clip:text;
 
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .flex-main{
+        flex-direction: column;
+    }
+
+    .btn{
+        max-width: 15px;
+    }
+
+    nav>*{
+        flex: 1;
 }
