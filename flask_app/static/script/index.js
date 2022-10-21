@@ -7,14 +7,14 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&app
     .then(coderData => {
         // console.log(coderData)
         weather.innerHTML=`
-        <h4 class="olive-pale">Temp</h4>
-        <p>${Math.round((coderData.main.temp-273.15)*1.8+32)} F</p>
-        <h4 class="olive-pale" >Humidity</h4>
-        <p>${coderData.main.humidity}</p>
-        <h4 class="olive-pale" >Min</h4>
-        <p>${Math.round((coderData.main.temp_min-273.15)*1.8+32)} F</p>
-        <h4 class="olive-pale" >Max</h4>
-        <p>${Math.round((coderData.main.temp_max-273.15)*1.8+32)} F</p>
+        <h4 class="olive-pale align-text">Temp</h4>
+        <p class="align-text text-white">${Math.round((coderData.main.temp-273.15)*1.8+32)} F</p>
+        <h4 class="olive-pale align-text" >Humidity</h4>
+        <p class="align-text text-white">${coderData.main.humidity}</p>
+        <h4 class="olive-pale align-text" >Min</h4>
+        <p class="align-text text-blue">${Math.round((coderData.main.temp_min-273.15)*1.8+32)} F</p>
+        <h4 class="olive-pale align-text" >Max</h4>
+        <p class="align-text text-red">${Math.round((coderData.main.temp_max-273.15)*1.8+32)} F</p>
         `
     } )
     .catch(err => console.log(err) )

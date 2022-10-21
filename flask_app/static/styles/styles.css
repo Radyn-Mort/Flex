@@ -19,7 +19,8 @@ nav{
     background-color: rgba(120, 133, 133, 1) ;
 }
 .push-top{
-    margin-top: 85px;
+    margin-top: 100px;
+    margin-left: 10px;
     }
 /* background colors */
 .olive-pale{
@@ -38,12 +39,32 @@ nav{
 .mocha{
     background-color: rgba(111, 104, 102, 1);
 }
+.text-red{
+    color: red;
+
+}
+.text-blue{
+    color: blue;
+
+}
+.text-white{
+    color: white;
+}
+.text-olive-pale{
+    color: rgba(204, 218, 209, 1);
+}
 /* flashed */
 .flash{
     color: red;
     font-family: 'Times New Roman', Times, serif;
 }
 
+a{
+    color: black;
+}
+a:hover{
+    color: white;
+}
 /* list  */
 .list{
     list-style: none;
@@ -61,7 +82,6 @@ li:hover, li:nth-of-type(2n):hover{
     position: relative;
     box-shadow: 0px 0px 10px 5px black;
     z-index: 100;
-    color: rgb(14, 1, 1);
     font-weight: bold;
 }
 
@@ -84,13 +104,16 @@ li:nth-of-type(2n) {
     flex-direction: column;
 }
 .align-text{
-    align-items: center;
+    text-align: center;
 }
 .space-between{
     justify-content: space-between;
 }
 .space-around{
     justify-content: space-around;
+}
+.center{
+    justify-content: center;
 }
 .flex-row{
     display: flex;
@@ -235,11 +258,24 @@ li:nth-of-type(2n) {
     .flex-main{
         flex-direction: column;
     }
-
-    .btn{
-        max-width: 15px;
+    h1{
+        font-size: large;
+    }
+    h2{
+        font-size: medium;
+    }
+    h3{
+        align-self: center;
+        font-size: small;
+    }
+    h4{
+        font-size: smaller;
+    }
+    p{
+        font-size: smaller;
     }
 
     nav>*{
+        max-height: 100px;
         flex: 1;
 }

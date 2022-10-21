@@ -19,8 +19,9 @@
         </div>
     </nav>
     <!-- if session user_id is equal to profile id show id button else if  -->
-
-    <main class="flex push-top">
+    <h2 class="push-top text-olive-pale">Welcome, {{session.persona}}</h2>
+    <main class="flex">
+        
         <section class="mocha flex-3 margin-10">
             <h2>{{user.persona}}</h2>
             <img src="../static/img/column.png" alt="profile pic" class="img-large">

@@ -57,8 +57,9 @@ def profile(id):
     
 @app.route('/view/<int:id>')
 def view(id):
-    if session['user_id']==id:
-        return redirect(f'/profile/{id}')
+    if 'user_id' in session:
+        if session['user_id']==id:
+            return redirect(f'/profile/{id}')
     user = User.get_by_id(id)
     ranks = User.get_5_order_by_rank(user.rank)
     return render_template('view.html',user=user,ranks=ranks)    
