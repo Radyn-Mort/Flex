@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <title>The Borealis Flex - Home</title>
+</head>
+<body class="coffee">
+    <nav class="pad-5">
+        <h1>The Borealis Flex</h1>
+        <div class="margin-10">
+        {%if 'user_id' not in session%}
+        <a href="/log_in_form" class="btn">Log In</a>
+        <a href="/register_form" class="btn">Register</a>
+        {% else %}
+        <a href="/profile/{{session.user_id}}" class="btn">Profile</a>
+        <a href="/log_out" class="btn">Log Out</a>
+        {% endif %}
+        </div>
+    </nav>
+    <h2 class="push-top">Welcome, {{session.persona}}</h2>
+    <main class="flex">
+        <section class="margin-10 flex-3 shadow">
+            <div class="olive pad-5">
+                <h2>Rankings</h2>
+            </div>
+            <div class="mocha pad-5">
+                <div class="flex-row gap-1">
+                    {% for user in users %}
+                        {% if user.rank == 1 %}
+                            <div class="flex-col align-text">
+                                <h3 class="text-gold">Rank 1</h3>
+                                <h4>{{user.persona}}</h4>
+                                <p>{{user.park}}</p>
+                                <a href="/view/{{user.id}}">View</a>
+                                <img src="../static/img/column.png" alt="column" class="img-med">
+                            </div>
+                        {% elif user.rank == 2 %}
+                            <div class="flex-col align-text">
+                                    <h3 class="text-silver">Rank 2</h3>
+                                    <h4>{{user.persona}}</h4>
+                                    <p>{{user.park}}</p>
+                                    <a href="/view/{{user.id}}">View</a>
+                                    <img src="../static/img/column.png" alt="column" class="img-med">
+                            </div>
+                        {% elif user.rank == 3%}
+                            <div class="flex-col align-text">
+                                <h3 class="text-bronze">Rank 3</h3>
+                                <h4>{{user.persona}}</h4>
+                                <p>{{user.park}}</p>
+                                <a href="/view/{{user.id}}">View</a>
+                                <img src="../static/img/column.png" alt="column" class="img-med">
+                            </div>
+                    </div>
+            <div class="coffee pad-5 solid">
+                    <ul class="list ">
+                    {% else %}
+                            <li >{{user.rank}} {{user.persona}} {{user.park}} <a href="/view/{{user.id}}">View</a></li>
+                    {% endif %}
+                    {% endfor %}
+                            
+                    </ul>
+            </div>
+            </div>
+        </section>
+        <section class="margin-10 flex-2">
+            <div class="shadow">
+            <!-- card head -->
+                <h2 class="olive pad-5">New Challenge</h2>
+            <!-- card body -->
+            <div class="mocha pad-5">
+                {%for challenge in challenges %}
+                <div >
+                    <h3 class="coffee">{{challenge.challenger.persona}} vs {{challenge.challenged.persona}}</h3>
+                    <div class="olive-pale"><a href="#">Video link</a></div>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <title>The Borealis Flex - Register</title>
+</head>
+<body class="coffee">
+    <nav class="olive pad-5">
+        <h1>The Borealis Flex</h1>
+        <div>
+        <a href="/" class="btn margin-10">Home</a>
+        <a href="/log_in_form" class="btn margin-10">Log In</a>
+        </div>
+    </nav>
+    <main class="flex-row push-top">
+        <div class="shadow box pad-5 olive">
+            <h2 class="olive">Register</h2>
+            <form action="/register" method="POST" class="flex-col pad-5 ">
+                <div class="flex-col">
+                    <label for="first_name" class="mocha">First Name:</label>
+                    <input type="text" name="first_name" class="olive-pale">
+                </div>
+                <div class="flex-col">
+                    <label for="last_name" class="mocha">Last Name:</label>
+                    <input type="text" name="last_name" class="olive-pale">
+                </div>
+                <div class="flex-col">
+                    <label for="persona"class="mocha">Persona:</label>
+                    <input type="text" name="persona" class="olive-pale">
+                </div>
+                <div class="flex-col">
+                    <label for="park" class="mocha">Park:</label>
+                    <select name="park" class="olive-pale">
+                        <option value="io">Inland Ocean</option>
+                        <option value="gwk">Greenwood Keep</option>
+                        <option value="sm">Shrouding Mist</option>
+                        <option value="th">The Hallow</option>
+                        <option value="dfv">Dragons of Fire Valley</option>
+                        <option value="mh">Mithril Hills</option>
+                    </select>
+                </div>
+                <div class="flex-col">
+                    <label for="email"class="mocha">Email:</label>
+                    <input type="email" name="email" class="olive-pale">
+                </div>
+                <div class="flex-col">
+                    <label for="password" class="mocha">Password:</label>
+                    <input type="password" name="password" class="olive-pale">
+                </div>
+                <div class="flex-col">
+                    <label for="confirm" class="mocha"> Confirm Password:</label>
+                    <input type="password" name="confirm" class="olive-pale">
+                </div>
+                <input type="submit" value="Create" class="btn pad-5 ">
+            </form>
+        </div>
+    </main>
+    <section class="flash">
+        {% for message in get_flashed_messages() %}
+        <p>{{message}}</p>
+        {% endfor %}
+    </section>
+</body>
+</html>

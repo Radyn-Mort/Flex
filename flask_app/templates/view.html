@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <title>Profile</title>
+</head>
+<body class="coffee">
+    <nav>  
+        <h1 class>The Borealis Flex</h1>
+        <div>
+        <a href="/" class="btn">home</a>
+        <a href="/log_out" class="btn">Log Out</a>
+        </div>
+    </nav>
+    <!-- if session user_id is equal to profile id show id button else if  -->
+
+    <main class="flex push-top">
+        <section class="mocha flex-3 margin-10">
+            <h2>{{user.persona}}</h2>
+            <img src="../static/img/column.png" alt="profile pic" class="img-large">
+            <p>Rank: {{user.rank}} <br> Park: {{user.park}} <br></p>
+        </section>
+        <section class="margin-10 flex-2">
+            <div class="shadow">
+            <!-- card head -->
+                <h2 class="olive pad-5">New Challenge</h2>
+            <!-- card body -->
+            <div class="mocha pad-5">
+                <!-- jinja here for challenges -->
+                <div >
+                    <h3 class="coffee">New Challenges name vs name2 </h3>
+                    <div class="olive-pale"><a href="#">Video link</a></div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <section>
+    <div class="mocha pad-5 solid margin-10 shadow">
+        <h3 class="coffee pad-5">Able to Challenge </h3>
+        <div class="">
+        <ul class="list ">
+            {% for rank in ranks %}
+                <li >{{rank.rank}} {{rank.persona}} {{rank.park}}</li>
+            {% endfor %}
+
+        </ul>
+        </div>
+    </div>
+</section>
+</div>
+
+</body>
+</html>

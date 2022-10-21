@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <title>The Borealis Flex - Log In</title>
+</head>
+<body class="coffee">
+    <nav class="olive pad-5">
+        <h1 class>The Borealis Flex</h1>
+        <div>
+        <a href="/" class="btn">home</a>
+        <a href="/register_form" class="btn">Register</a>
+        </div>
+    </nav>
+    <main class="flex-row push-top">
+            <div class="olive box pad-5 shadow">
+            <div class="olive pad-5">
+                <h2 class="">Log In</h2>
+                </div>
+            <form action="/log_in" method="POST" class="flex-col pad-5">
+                <div class="flex-col">
+                    <label for="email" class="mocha">Email:</label>
+                    <input type="email" name="email" class="olive-pale">
+                </div>
+                <div class="flex-col">
+                    <label for="password" class="mocha">Password:</label>
+                    <input type="password" name="password" class="olive-pale">
+                </div>
+                <input type="submit" value="Log In" class="mint btn   margin-top-10">
+            </form>
+        </div>
+    </main>
+    <section class="flash">
+        {% for message in get_flashed_messages() %}
+        <p>{{message}}</p>
+        {% endfor %}
+    </section>
+</body>
+</html>
