@@ -21,7 +21,6 @@ class Challenge:
         results = connectToMySQL(DB).query_db(query)
         clist=[]
         for result in results:
-            print(result)
             challenge = cls(result)
             challenger_data = {
                 'id':result['id'],
