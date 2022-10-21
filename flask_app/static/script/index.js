@@ -1,4 +1,4 @@
-let KEY = '888e1c1817c4948d34d37f0ffd3e29ea'
+let KEY =
 let lat = 47.7511
 let lon = -120.7401
 const weather = document.querySelector('#weather')
